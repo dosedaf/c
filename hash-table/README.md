@@ -22,14 +22,14 @@ A **Hash Table** is a data structure that maps keys to values using a hashing fu
 - **Resolution Strategy**: Methods that are used to handle collisions.
 
 ## Functions
-1. **Hashing**: Converts a key into an index. [hash_function](https://github.com/dosedaf/c/blob/main/hash-table/normal/main.c#24-33)
-2. **Insertion**: Place the key-value pair at the calculated index.
-3. **Searching**: Retrieve a value by applying the hash function to the key.
-4. **Deletion**: Remove a key-value pair and handle any necessary reordering.
+1. **Hashing**: Converts a key into an index. [Code](https://github.com/dosedaf/c/blob/main/hash-table/normal/main.c#L24-L33)
+2. **Insertion**: Place the key-value pair at the calculated index. [Code](https://github.com/dosedaf/c/blob/main/hash-table/linear-probing/main.c#L50-L63)
+3. **Searching**: Retrieve a value by applying the hash function to the key. [Code](https://github.com/dosedaf/c/blob/main/hash-table/linear-probing/main.c#L65-L76)
+4. **Deletion**: Remove a key-value pair and handle any necessary reordering. [Code](https://github.com/dosedaf/c/blob/main/hash-table/normal/main.c#L81-L94)
 5. **Collision Handling**: If a collision occurs, use a resolution method.
    - **External Chaining**: Store multiple key-value pairs at the same index.
    - **Open Addressing**: Find another empty slot in the array.
-      - **Linear Probing**: Move sequentially.
+      - **Linear Probing**: Move sequentially. 
       - **Quadratic Probing**: Checks slot based on quadratic function. 
       - **Double Hashing**: Use of secondary hash function.
 
