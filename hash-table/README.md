@@ -22,7 +22,7 @@ A **Hash Table** is a data structure that maps keys to values using a hashing fu
 - **Resolution Strategy**: Methods that are used to handle collisions.
 
 ## Functions
-1. **Hashing**: Converts a key into an index.
+1. **Hashing**: Converts a key into an index. [hash_function](https://github.com/dosedaf/c/blob/main/hash-table/normal/main.c#24-33)
 2. **Insertion**: Place the key-value pair at the calculated index.
 3. **Searching**: Retrieve a value by applying the hash function to the key.
 4. **Deletion**: Remove a key-value pair and handle any necessary reordering.
