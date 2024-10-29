@@ -1,16 +1,15 @@
 #include "hashtable.h"
 
 typedef struct entry {
-  char *key;
-  size_t keylen;
-  void *object;
-  struct entry *next;
+  char *key; // the key, like index in previous hash table
+  void *object; // data
+  struct entry *next; // for chaining
 } entry;
 
 typedef struct _hash_table {
-  uint32_t size;
+  uint32_t size; // num of elements
   hash_function *hash;
-  entry **elements;
+  entry **elements; // arr of elements
 } hash_table;
 
 hash_table *hash_table_create(uint32_t size, hash_function *hf) {
@@ -26,11 +25,33 @@ void hash_table_destroy(hash_table *ht) {
   free(ht);
 };
 
-void hash_table_print(hash_table *hf);
-bool hash_table_insert(hash_table *ht, const char *key, size_t keylen,
-                       void *obj);
-void *hash_table_lookup(hash_table *ht, const char *key, size_t keylen);
-void *hash_table_delete(hash_table *ht, const char *key, size_t keylen);
+void hash_table_print(hash_table *ht) {
+  printf("Start\n");
+  for(uint32_t i = 0; i < ht->size; i++) {
+    if(ht->elements[i] == NULL) {
+      printf("\t%i\t---\n", i);
+    } else {
+      printf("\t%i\t\n", i);
+      entry *tmp = ht->elements[i];
+
+      while(tmp != NULL) {
+        printf("\"%s\"(%p) - ", tmp->key, tmp->object);
+        tmp = tmp->next;
+      };
+
+      printf("\n"); 
+    };
+
+  };
+
+  printf("End\n"); 
+};
+
+bool hash_table_insert(hash_table *ht, const char *key, void *obj);
+
+void *hash_table_lookup(hash_table *ht, const char *key);
+
+void *hash_table_delete(hash_table *ht, const char *key);
 
 int main() {
   return 0;

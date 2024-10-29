@@ -13,7 +13,7 @@ pointer yg bisa dipopulate address tipe data apapun, void pointer bisa di typeca
 ### aturan void pointer:
   1. **gabisa langsung didereference**
       harus di typecast ke pointer dengan tipe data a baru lalu di dereference
-  2. *c standard ga ngebolehin void pointer sm arithmetic* 
+  2. **c standard ga ngebolehin void pointer sm arithmetic**
       tp di gnu c boleh, considering the size of void as 1
 
 ### benefit pake void pointer:
